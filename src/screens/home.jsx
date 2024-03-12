@@ -16,6 +16,7 @@ export const Home = ({ navigation }) => {
       <FlatList
         data={posts}
         renderItem={renderPosts}
+        initialNumToRender={15}
         ListEmptyComponent={
           <View
             style={{
