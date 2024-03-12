@@ -14,12 +14,7 @@ const CommentBase = ({ comment, createdAt, id }) => {
       }}
     >
       <View style={{ marginBottom: 5, rowGap: 10 }}>
-        <Text
-          numberOfLines={disabled ? undefined : 5}
-          style={{ fontSize: 13, color: "#a0a0ac" }}
-        >
-          {content}
-        </Text>
+        <Text style={{ fontSize: 13, color: "#a0a0ac" }}>{comment}</Text>
         <Text style={{ fontSize: 12 }}>{`Posted on ${dateFormat(
           createdAt
         )}`}</Text>

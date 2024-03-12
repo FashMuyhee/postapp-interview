@@ -1,2 +1,2 @@
 export * from './CommentFooter'
-export * from './Comment'
+export * from './Comments'

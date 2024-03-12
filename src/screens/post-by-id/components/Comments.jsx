@@ -11,6 +11,7 @@ export const Comments = ({ postId }) => {
   };
   return (
     <View>
+      <Text style={{ paddingVertical: 5 }}>Comments</Text>
       <FlatList
         data={comments}
         renderItem={renderComments}
@@ -23,7 +24,7 @@ export const Comments = ({ postId }) => {
               justifyContent: "center",
             }}
           >
-            <Text style={{ fontSize: 20 }}>Be the first to comment</Text>
+            <Text style={{ fontSize: 15 }}>Be the first to comment</Text>
           </View>
         }
       />

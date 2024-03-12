@@ -1,7 +1,7 @@
 import React from "react";
 import { useGetPostById } from "../../hooks";
 import { Text } from "react-native";
-import { CommentFooter } from "./components";
+import { CommentFooter, Comments } from "./components";
 import { Post, ScreenWrapper } from "../../components";
 
 export const PostById = ({ route }) => {
@@ -11,8 +11,8 @@ export const PostById = ({ route }) => {
   return (
     <ScreenWrapper>
       <Post {...post} disabled />
-      <Text style={{ paddingVertical: 5 }}>Comments</Text>
       {/* COMMENTS */}
+      <Comments postId={id} />
       <CommentFooter postId={id} />
     </ScreenWrapper>
   );
