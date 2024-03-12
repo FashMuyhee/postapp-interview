@@ -7,6 +7,7 @@ export const useAddComment = ({ postId, comment }) => {
   const dispatch = useDispatch()
 
   const onSubmit = React.useCallback(() => {
+    // VALIDATIONS
     if (!comment) {
       ToastContainer.show("Please enter comment content", {
         duration: Toast.durations.LONG,
@@ -21,7 +22,7 @@ export const useAddComment = ({ postId, comment }) => {
       return;
     }
 
-    // HANDLE POST
+    // HANDLE SUBMISSION
     dispatch(addComment({ postId, comment }));
     Toast.show("Comment added successfully", {
       duration: Toast.durations.LONG,

@@ -7,7 +7,7 @@ export const useAddPost = ({ title, content }) => {
   const dispatch = useDispatch()
 
   const onSubmit = React.useCallback(() => {
-
+    // VALIDATION
     if (!title) {
       Toast.show("Title is required", {
         duration: Toast.durations.LONG,
@@ -20,7 +20,7 @@ export const useAddPost = ({ title, content }) => {
       });
       return;
     }
-    // HANDLE POST
+    // HANDLE SUBMISSION
     dispatch(addPost({ title, content }));
     Toast.show("Post added successfully", {
       duration: Toast.durations.LONG,

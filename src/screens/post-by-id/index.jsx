@@ -1,6 +1,5 @@
 import React from "react";
 import { useGetPostById } from "../../hooks";
-import { Text } from "react-native";
 import { CommentFooter, Comments } from "./components";
 import { Post, ScreenWrapper } from "../../components";
 
