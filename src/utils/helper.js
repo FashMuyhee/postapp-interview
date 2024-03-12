@@ -13,3 +13,9 @@ export const generateUID = () => {
   // Construct and return UID
   return `uid${year}${month}${day}${hours}${minutes}${seconds}${milliseconds}`;
 }
+
+
+export const dateFormat = (date) => {
+  const d = new Date(date);
+  return d.toDateString();
+}

@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { AddPost, Home } from "../screens";
+import { AddPost, Home, PostById } from "../screens";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +15,17 @@ export const StackNav = () => {
       }}
     >
       <Stack.Screen name="home" component={Home} options={{ title: "Home" }} />
+      <Stack.Screen
+        name="post-by-id"
+        component={PostById}
+        options={({
+          route: {
+            params: { title },
+          },
+        }) => ({
+          title,
+        })}
+      />
       <Stack.Screen
         name="new-post"
         component={AddPost}

@@ -1,34 +1,14 @@
 import React from "react";
 import { Button, ScreenWrapper, TextInput } from "../components";
-import Toast from "react-native-root-toast";
-import { useDispatch } from "react-redux";
-import { addPost } from "../redux/slices";
+import { useAddPost } from "../hooks";
 
 export const AddPost = ({ navigation }) => {
   const [title, setTitle] = React.useState("");
   const [content, setContent] = React.useState("");
-
-  const dispatch = useDispatch();
+  const addPost = useAddPost({ content, title });
 
   const onSubmit = () => {
-    // FORM VALIDATION
-    if (!title) {
-      Toast.show("Title is required", {
-        duration: Toast.durations.LONG,
-      });
-      return;
-    }
-    if (!content) {
-      Toast.show("Content is required", {
-        duration: Toast.durations.LONG,
-      });
-      return;
-    }
-    // HANDLE POST
-    dispatch(addPost({ title, content }));
-    Toast.show("Post added successfully", {
-      duration: Toast.durations.LONG,
-    });
+    addPost();
     navigation.goBack();
   };
 
